@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Starts testrunner execution of all specs
+
+docker-compose run --rm testrunner bundle exec rspec spec

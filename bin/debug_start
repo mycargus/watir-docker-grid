@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Starts the Selenium hub, the app under test, and the Selenium
+# *debug* browser nodes
+
+./bin/stop
+
+docker-compose up -d hub web node-chrome-debug node-firefox-debug
