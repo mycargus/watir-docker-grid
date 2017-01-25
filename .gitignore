@@ -1,0 +1,7 @@
+/spec/reports/
+/spec/examples.txt
+/tmp/
+
+.ruby-version
+.DS_Store
+.idea
