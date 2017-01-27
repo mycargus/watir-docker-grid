@@ -6,23 +6,6 @@ RSpec.configure do |config|
   config.add_formatter(:documentation) if config.formatters.empty?
   config.add_formatter(Watir::RSpec::HtmlFormatter)
 
-  config.before :all do
-    # We want to build our selenium test suite against Chrome.
-    # If a selenium test runs in Chrome, it usually also runs in Firefox.
-    # The reverse is true far less often.
-    capabilities = Selenium::WebDriver::Remote::Capabilities.chrome
-
-    @browser = Watir::Browser.new(
-      :remote,
-      url: "http://#{ENV.fetch('HUB_HOST')}/wd/hub",
-      desired_capabilities: capabilities
-    )
-  end
-
-  config.after :all do
-    @browser&.close
-  end
-
   # Include RSpec::Helper into each of your example group for making it possible to
   # write in your examples instead of:
   #   @browser.goto "localhost"

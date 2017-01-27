@@ -5,4 +5,4 @@
 
 ./bin/stop
 
-docker-compose up -d hub web node-chrome node-firefox
+docker-compose up -d hub web node-firefox node-chrome

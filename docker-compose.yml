@@ -22,8 +22,8 @@ services:
   hub:
     image: selenium/hub:3.0.1
     environment:
-      GRID_BROWSER_TIMEOUT: 120000
-      GRID_TIMEOUT: 120000
+      GRID_BROWSER_TIMEOUT: 10000 # 10 seconds
+      GRID_TIMEOUT: 10000
       VIRTUAL_HOST: selenium.hub.docker
     ports:
       - "4444:4444"
@@ -35,17 +35,19 @@ services:
       # https://github.com/SeleniumHQ/docker-selenium/issues/133
       HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
+    ports:
+      - "5901:5900"
     links:
       - hub
-      - web
 
   node-chrome:
     image: selenium/node-chrome:3.0.1
     environment:
       <<: *SELENIUM_NODE_ENV
+    ports:
+      - "5900:5900"
     links:
       - hub
-      - web
 
   node-chrome-debug:
     image: selenium/node-chrome-debug:3.0.1
