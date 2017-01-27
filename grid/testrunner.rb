@@ -7,16 +7,10 @@ module Grid
     BROWSERS = ['firefox', 'chrome'].freeze
 
     def run
-      # threads = []
       BROWSERS.each do |browser|
         setup(browser)
         yield
-        # threads << Thread.new do
-        #   setup(browser)
-        #   yield
-        # end
       end
-      # threads.each { |thread| thread.join }
     end
 
     def setup(browser)
