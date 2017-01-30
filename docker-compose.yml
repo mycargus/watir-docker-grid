@@ -57,7 +57,6 @@ services:
       - "5900:5900"
     links:
       - hub
-      - web
 
   node-firefox-debug:
     image: selenium/node-firefox-debug:3.0.1
@@ -67,4 +66,3 @@ services:
       - "5901:5900"
     links:
       - hub
-      - web
