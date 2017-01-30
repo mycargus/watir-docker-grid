@@ -1,4 +1,3 @@
-require 'pry'
 require 'rspec'
 require 'watir/rspec'
 
