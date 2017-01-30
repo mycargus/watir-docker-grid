@@ -32,16 +32,16 @@ _Both `dinghy` and `dory` are optional dependencies, and one may certainly use t
 ## Setup
 
 By default this project will use [a bare-bones Sinatra web app](https://github.com/mycargus/hello_docker_world) as the 
-app under test (AUT). 
+system under test (SUT). 
 
 If you'd like to see this project in action before adding your app, go ahead and skip to the 
 ["How do I execute the tests?"](https://github.com/mycargus/docker-grid-watir/blob/master/README.md#how-do-i-execute-the-tests) section.
 
 ### Where do I add my app?
 
-Add the docker image of the AUT to the `docker-compose.yml` file under the `web` service container. 
+Add the docker image of the SUT to the `docker-compose.yml` file under the `web` service container. 
 
-If you're using `dinghy` or `dory`, be sure to define the AUT's virtual URL (a default is provided). For example:
+If you're using `dinghy` or `dory`, be sure to define the SUT's virtual URL (a default is provided). For example:
 
 ```
 web:
@@ -57,13 +57,13 @@ their website.
 
 ## How do I execute the tests?
 
-Start the Selenium hub, the AUT, and the Selenium browser nodes:
+Start the Selenium hub, the SUT, and the Selenium browser nodes:
 
 ```sh
 $ bin/start
 ```
 
-Execute the tests with Rspec and Capybara from inside the `testrunner` container:
+Execute the tests with Rspec from inside the `testrunner` container:
 
 ```sh
 $ bin/test
@@ -84,7 +84,7 @@ docker-compose.yml config, then you'll want to open that URL instead.
 
 ## Can I view the Selenium grid console?
 
-Yep! After having started the Selenium hub and nodes (`$ npm start`), open a
+Yep! After having started the Selenium hub and nodes (`$ bin/start`), Open a
 browser and go to [http://selenium.hub.docker](http://selenium.hub.docker), then click the 'console' link.
 
 ## A test is failing. How do I debug it?
