@@ -11,8 +11,8 @@ services:
     build:
       context: .
     environment:
-      APP_HOST: hello.docker
-      HUB_HOST: selenium.hub.docker
+      APP_HOST: web:80
+      HUB_HOST: hub:4444
     volumes:
       - .:/usr/src/app
     links:
