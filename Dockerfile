@@ -12,7 +12,6 @@ USER docker
 RUN bundle install --quiet --jobs 8
 USER root
 
-COPY . $APP_HOME
-RUN chown -R docker:docker $APP_HOME
+COPY --chown=docker:docker . $APP_HOME
 
 USER docker
