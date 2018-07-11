@@ -19,14 +19,12 @@ module Grid
 
       RSpec.configure do |config|
         config.before :all do
-          capabilities = Selenium::WebDriver::Remote::Capabilities.send(browser.to_sym)
-
           @browser = Watir::Browser.new(
-            :remote,
-            url: "http://#{ENV.fetch('HUB_HOST')}/wd/hub",
-            desired_capabilities: capabilities
+            browser.to_sym,
+            { url: "http://#{ENV.fetch('HUB_HOST')}/wd/hub" }
           )
         end
+
         config.after :all do
           @browser&.close
         end
