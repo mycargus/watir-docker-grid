@@ -22,8 +22,8 @@ GEM
     selenium-webdriver (3.13.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
-    watir (6.1.0)
-      selenium-webdriver (~> 3.0)
+    watir (6.11.0)
+      selenium-webdriver (~> 3.4, >= 3.4.1)
     watir-rspec (3.0.0)
       rspec (~> 3.0)
       watir (>= 6.0.0.beta4)
@@ -34,8 +34,8 @@ PLATFORMS
 DEPENDENCIES
   rspec
   selenium-webdriver (= 3.13.0)
-  watir (~> 6.1)
-  watir-rspec (~> 3.0)
+  watir
+  watir-rspec
 
 RUBY VERSION
    ruby 2.5.1p57
