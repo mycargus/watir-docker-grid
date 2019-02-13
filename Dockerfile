@@ -6,12 +6,12 @@ ENV APP_HOME /usr/src/app
 RUN mkdir -p $APP_HOME/tmp/spec-results
 WORKDIR $APP_HOME
 
-COPY Gemfile Gemfile.lock $APP_HOME/
+COPY Gemfile Gemfile.lock ./
 
 USER docker
 RUN bundle install --quiet --jobs 8
 USER root
 
-COPY --chown=docker:docker . $APP_HOME
+COPY --chown=docker:docker . ./
 
 USER docker
