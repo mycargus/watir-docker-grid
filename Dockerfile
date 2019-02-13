@@ -4,6 +4,7 @@ USER root
 
 ENV APP_HOME /usr/src/app
 RUN mkdir -p $APP_HOME/tmp/spec-results
+RUN chown -R docker $APP_HOME
 WORKDIR $APP_HOME
 
 COPY Gemfile Gemfile.lock ./
