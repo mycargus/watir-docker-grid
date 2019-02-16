@@ -2,6 +2,8 @@
 
 set -ev
 
+export COMPOSE_FILE=docker-compose.yml
+
 function cleanup()
 {
   exit_code=$?
