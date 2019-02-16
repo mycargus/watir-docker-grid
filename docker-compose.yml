@@ -2,24 +2,6 @@ version: '3.7'
 
 services:
 
-  web:
-    image: mycargus/hello_docker_world:latest
-    environment:
-      VIRTUAL_HOST: hello.docker
-    networks:
-      - watir-docker-grid-network
-
-  testrunner:
-    build:
-      context: .
-    environment:
-      APP_HOST: web:80
-      HUB_HOST: hub:4444
-    volumes:
-      - .:/usr/src/app
-    networks:
-      - watir-docker-grid-network
-
   hub:
     image: selenium/hub:3.141.0 # this version should match that of the selenium-webdriver gem (see Gemfile)
     environment:
@@ -45,6 +27,15 @@ services:
     networks:
       - watir-docker-grid-network
 
+  node-firefox-debug:
+    image: selenium/node-firefox-debug:3.141.0 # this version should match that of the selenium-webdriver gem (see Gemfile)
+    environment:
+      <<: *SELENIUM_NODE_ENV
+    ports:
+      - "5901:5900"
+    networks:
+      - watir-docker-grid-network
+
   node-chrome:
     image: selenium/node-chrome:3.141.0 # this version should match that of the selenium-webdriver gem (see Gemfile)
     environment:
@@ -63,12 +54,21 @@ services:
     networks:
       - watir-docker-grid-network
 
-  node-firefox-debug:
-    image: selenium/node-firefox-debug:3.141.0 # this version should match that of the selenium-webdriver gem (see Gemfile)
+  testrunner:
+    build:
+      context: .
     environment:
-      <<: *SELENIUM_NODE_ENV
-    ports:
-      - "5901:5900"
+      APP_HOST: web:80
+      HUB_HOST: hub:4444
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - watir-docker-grid-network
+
+  web:
+    image: mycargus/hello_docker_world:latest
+    environment:
+      VIRTUAL_HOST: hello.docker
     networks:
       - watir-docker-grid-network
 
