@@ -1,3 +1,4 @@
+---
 version: '3.7'
 
 services:
@@ -61,8 +62,6 @@ services:
     environment:
       APP_HOST: web:80
       HUB_HOST: hub:4444
-    volumes:
-      - .:/usr/src/app
     networks:
       - watir-docker-grid-network
 

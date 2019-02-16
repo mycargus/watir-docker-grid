@@ -9,6 +9,7 @@ addons:
 
 env:
   - DOCKER_COMPOSE_VERSION=1.23.2
+  - COMPOSE_FILE=docker-compose.yml
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
