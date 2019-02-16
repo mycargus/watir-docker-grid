@@ -57,6 +57,7 @@ services:
   testrunner:
     build:
       context: .
+    command: ./scripts/execute_tests.sh
     environment:
       APP_HOST: web:80
       HUB_HOST: hub:4444

@@ -1,4 +1,4 @@
-[![Codeship Status for mycargus/watir-docker-grid](https://app.codeship.com/projects/0c508d50-1168-0137-7dd9-26e78f712ab7/status?branch=master)](https://app.codeship.com/projects/327277)
+[![Build Status](https://travis-ci.org/mycargus/watir-docker-grid.svg?branch=master)](https://travis-ci.org/mycargus/watir-docker-grid)
 
 # A Dockerized Selenium Grid with RSpec and Watir
 
