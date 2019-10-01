@@ -19,10 +19,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
-    rubyzip (1.2.3)
-    selenium-webdriver (3.142.4)
+    rubyzip (2.0.0)
+    selenium-webdriver (3.142.5)
       childprocess (>= 0.5, < 3.0)
-      rubyzip (~> 1.2, >= 1.2.2)
+      rubyzip (>= 1.2.2)
     watir (6.16.5)
       regexp_parser (~> 1.2)
       selenium-webdriver (~> 3.6)
@@ -35,7 +35,7 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  selenium-webdriver (= 3.142.4)
+  selenium-webdriver (= 3.142.5)
   watir
   watir-rspec
 
