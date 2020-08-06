@@ -2,4 +2,6 @@
 
 # Builds the testrunner docker image for rspec and watir
 
+set -e
+
 docker-compose build --pull testrunner
