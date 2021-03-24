@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mycargus/watir-docker-grid.svg?branch=master)](https://travis-ci.org/mycargus/watir-docker-grid)
+[![Build Status](https://travis-ci.com/mycargus/watir-docker-grid.svg?branch=master)](https://travis-ci.com/mycargus/watir-docker-grid)
 
 # A Dockerized Selenium Grid with RSpec and Watir
 
